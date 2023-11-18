@@ -30,13 +30,13 @@ public class OrderController {
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("/user")
-    @Operation(summary="Recuperar la lista de pedidos de usuarios por nombre de usuario")
-    public ResponseEntity<List<Order>> getListByUser(@RequestParam("username") String username){
-        List<Order> list = orderService.getOrderByUser(username);
+   @GetMapping("/user")
+@Operation(summary="Recuperar la lista de pedidos de usuarios por nombre de usuario")
+public ResponseEntity<List<Order>> getListByUser(@RequestParam("username") String username){
+    List<Order> list = orderService.findByUserUsername(username);
 
-        return ResponseEntity.ok(list);
-    }
+    return ResponseEntity.ok(list);
+}
 
     @PostMapping("/create")
     @Operation(summary="Pedir productos")
