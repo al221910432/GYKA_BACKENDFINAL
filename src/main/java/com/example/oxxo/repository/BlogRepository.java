@@ -11,7 +11,7 @@ import com.example.oxxo.entity.Blog;
 @Repository
 public interface BlogRepository extends JpaRepository<Blog,Long> {
     
-    @Query(value = "Select * from blog order by id desc limit :limit",nativeQuery = true)
+    @Query(value = "Select * from Blog order by id desc limit :limit",nativeQuery = true)
     List<Blog> getListNewest(int limit);
 
 }
