@@ -11,6 +11,6 @@ import com.example.oxxo.entity.Category;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category,Long> {
     
-    @Query("Select c from Category c where c.enable = true")
+    @Query("Select c from category c where c.enable = true")
     List<Category> findALLByEnabled();
 }
